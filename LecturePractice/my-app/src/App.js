@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
+import Pet from "./Pet/Pet";
 
 class App extends Component {
     state = {
@@ -8,7 +9,10 @@ class App extends Component {
             { name: "Poonam", age: "26" },
             { name: "Prasad", age: "21" },
             { name: "Stranger", age: "30" }
-        ]
+        ],
+        pet: {
+            name: 'Maxy'
+        }
     };
 
     switchHandler = e => {
@@ -30,10 +34,14 @@ class App extends Component {
                     name={this.state.person[0].name}
                     age={this.state.person[0].age}
                 />
+                {/* accessing the pet Component using props */}
+                <Pet name="Tom"></Pet>
                 <Person
                     name={this.state.person[1].name}
                     age={this.state.person[1].age}
                 />
+                {/* accessing the pet Component using state */}
+                <Pet name={this.state.pet.name}></Pet>
                 <Person
                     name={this.state.person[2].name}
                     age={this.state.person[2].age}
